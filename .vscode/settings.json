@@ -2,5 +2,8 @@
   "editor.tabSize": 4,
   "files.associations": {
     "*.html": "mustache"
+  },
+  "cmake.configureSettings": {
+    "CMAKE_TOOLCHAIN_FILE": "/home/cdock/dev/vcpkg/scripts/buildsystems/vcpkg.cmake"
   }
 }
