@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$USER_HOME$/.cache/CPM/crow/c0af1baa6c92ee981f067d01b19c6e857832d162" libraries="{htmx.org}" />
+    <file url="file://$PROJECT_DIR$" libraries="{htmx.org}" />
+  </component>
+</project>

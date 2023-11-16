@@ -5,14 +5,8 @@
     <title>Webby</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/static/favicon.ico" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        corePlugins: {
-          preflight: false,
-        },
-      };
-    </script>
+    <link rel="stylesheet" href="/static/app.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script
       src="https://unpkg.com/htmx.org@1.9.6"
       integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
@@ -21,26 +15,20 @@
   </head>
   <body>
     <h1>Properties</h1>
-    <fieldset>
-      <input
-        hx-post="/"
-        hx-target="body"
-        type="text"
-        name="name"
-        placeholder="Enter name"
-      />
-    </fieldset>
-    <button>Submit</button>
+    <form hx-post="/">
+      <fieldset>
+        <input
+          autocomplete="off"
+          type="text"
+          name="name"
+          placeholder="Enter name"
+        />
+      </fieldset>
+      <button>Submit</button>
+    </form>
     <div>
       <h1 class="text-red-500">Hello {{name}}!</h1>
     </div>
-    <div id="properties">
-      {{#properties}}
-      <div id="property-{{id}}">
-        {{name}}
-        <button hx-delete="/property/{{id}}" hx-target="body">X</button>
-      </div>
-      {{/properties}}
-    </div>
+    {{> fragments/properties-list.html}}
   </body>
 </html>

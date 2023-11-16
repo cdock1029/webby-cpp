@@ -1,0 +1,23 @@
+<div
+  id="properties"
+  hx-get="/properties"
+  hx-trigger="newProperty from:body"
+  hx-swap="outerHTML"
+  class="max-w-2xl p-4 space-y-4"
+>
+  {{#properties}}
+  <div id="property-{{id}}" class="flex">
+    <div class="flex-1">{{name}}</div>
+    <div class="flex space-x-4">
+      <button
+        hx-get="/property/{{id}}/edit"
+        hx-swap="outerHTML"
+        hx-target="property-{{id}}"
+      >
+        Edit
+      </button>
+      <button hx-delete="/property/{{id}}" hx-target="body">X</button>
+    </div>
+  </div>
+  {{/properties}}
+</div>

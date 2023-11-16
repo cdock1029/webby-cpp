@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27.0)
+cmake_minimum_required(VERSION 3.26.0)
 project(webby VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -44,7 +44,7 @@ include(cmake/CPM.cmake)
 add_library(asio INTERFACE)
 cpmaddpackage(NAME Crow GITHUB_REPOSITORY CrowCpp/Crow GIT_TAG "master")
 
-target_link_libraries(webby PRIVATE asio Crow::Crow libpqxx::pqxx fmt::fmt-header-only)
+target_link_libraries(webby PRIVATE asio Crow::Crow libpqxx::pqxx fmt::fmt)
 
 target_compile_options(webby PRIVATE -Werror -Wall -Wextra)
 
